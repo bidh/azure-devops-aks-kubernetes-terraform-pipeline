@@ -61,6 +61,10 @@ stages:
                   displayName: Download SSH key
                   inputs:
                     secureFile: 'aksprodsshkey.pub'
+                - task: TerraformInstaller@2
+                  displayName: Install Terraform
+                  inputs:
+                    terraformVersion: 'latest'
                 - task: TerraformCLI@2
                   displayName: Terraform Init
                   inputs:
